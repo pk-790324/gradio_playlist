@@ -27,4 +27,21 @@ demo1=gr.Interface(
     
 )
 
-demo1.launch()
+#demo1.launch()
+
+
+#Upload/Drop file with Gradio
+
+def count_files(files):
+    return f'Number of file uploaded: {len(files)}'
+
+demo2=gr.Interface(
+    fn=count_files,
+    inputs=gr.File(file_count="multiple",
+                   type='filepath',
+                   label='Upload or Drag Files Here',
+                   ),
+    outputs=gr.Textbox(label='Number of Files Uploaded')
+)
+
+demo2.launch()
