@@ -44,4 +44,21 @@ demo2=gr.Interface(
     outputs=gr.Textbox(label='Number of Files Uploaded')
 )
 
-demo2.launch()
+#demo2.launch()
+
+
+#creating your first gradio interface 
+
+def greet(name,intensity):
+    return "Hello, " + name +'!'*int(intensity)
+
+demo3=gr.Interface(
+    fn=greet,
+    inputs=['text','slider'],
+    outputs=['text'],
+    
+)
+#demo3.launch()
+
+
+#
