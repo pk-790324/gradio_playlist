@@ -61,4 +61,15 @@ demo3=gr.Interface(
 #demo3.launch()
 
 
-#
+# gradio demo calculator
+
+def add_number(number1,number2):
+    return number1+number2
+
+demo4=gr.Interface(
+    fn=add_number,
+    inputs=[gr.Number(),gr.Number()],
+    outputs=gr.Number()
+    
+)
+demo4.launch()
